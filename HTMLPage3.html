@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн запись - IMPULSE Wellness & Spa</title>
+    <link rel="stylesheet" href="css/StyleSheet3.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header" style="background: url('fon.jpg') center/cover no-repeat">
+        <!-- Верхняя полоса -->
+        <div class="header-top">
+            <button class="burger" aria-label="Открыть меню">
+                <span></span><span></span><span></span>
+            </button>
+
+            <a href="index.html" class="top-logo">
+                <img src="logot.png" alt="IMPULSE Wellness & Spa">
+                <span class="logo-text">IMPULSE<br>WELLNESS & SPA</span>
+            </a>
+
+            <div class="top-divider"></div>
+
+            <div class="top-item">
+                <span class="top-value">г. Иркутск, Красных Мадьяр 32</span>
+            </div>
+
+            <div class="top-divider"></div>
+
+            <div class="top-item">
+                <span class="top-value">Пн–Вс: 9:00–21:00</span>
+            </div>
+
+            <div class="top-divider"></div>
+
+            <a class="top-item top-phone" href="tel:+74951459033">
+                <span class="top-value">8 (495) 145-90-33</span>
+            </a>
+        </div>
+
+        <!-- Герой -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Онлайн запись</h1>
+            </div>
+        </section>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="booking-main">
+        <div class="booking-container">
+            <!-- Шаги записи -->
+            <div class="booking-steps">
+                <div class="step active">
+                    <span class="step-number">1</span>
+                    <span class="step-text">Выбрать специалиста</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <span class="step-text">Выбрать дату и время</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <span class="step-text">Выбрать услуги</span>
+                </div>
+            </div>
+
+            <!-- Контент шага -->
+            <div class="step-content">
+                <h2>Выберите специалиста</h2>
+                <div class="specialists-grid">
+                    <div class="specialist-card">
+                        <img src="aishat.png" alt="Айшат Бекова" class="specialist-photo">
+                        <div class="specialist-info">
+                            <h3>Айшат Бекова</h3>
+                            <p class="specialist-position">Парикмахер-стилист</p>
+                            <p class="specialist-experience">Опыт работы: 3 года</p>
+                            <p class="specialist-description">Специализация: стрижки, окрашивание, укладки</p>
+                        </div>
+                        <button class="btn-select">Выбрать</button>
+                    </div>
+
+                    <div class="specialist-card">
+                        <img src="yulia.png" alt="Мария Иванова" class="specialist-photo">
+                        <div class="specialist-info">
+                            <h3>Юлия Иванова</h3>
+                            <p class="specialist-position">Мастер ногтевого сервиса</p>
+                            <p class="specialist-experience">Опыт работы: 5 лет</p>
+                            <p class="specialist-description">Специализация: маникюр, педикюр, дизайн</p>
+                        </div>
+                        <button class="btn-select">Выбрать</button>
+                    </div>
+
+                    <div class="specialist-card">
+                        <img src="elena.jpg" alt="Елена Петрова" class="specialist-photo">
+                        <div class="specialist-info">
+                            <h3>Елена Петрова</h3>
+                            <p class="specialist-position">Бровист и визажист</p>
+                            <p class="specialist-experience">Опыт работы: 4 года</p>
+                            <p class="specialist-description">Специализация: коррекция бровей, макияж, ламинирование</p>
+                        </div>
+                        <button class="btn-select">Выбрать</button>
+                    </div>
+
+                    <div class="specialist-card">
+                        <img src="olga.jpg" alt="Ольга Сидорова" class="specialist-photo">
+                        <div class="specialist-info">
+                            <h3>Ольга Сидорова</h3>
+                            <p class="specialist-position">Специалист по эпиляции</p>
+                            <p class="specialist-experience">Опыт работы: 6 лет</p>
+                            <p class="specialist-description">Специализация: восковая эпиляция, шугаринг</p>
+                        </div>
+                        <button class="btn-select">Выбрать</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Навигация -->
+            <div class="booking-navigation">
+                <button class="btn-prev" disabled>Назад</button>
+                <button class="btn-next">Далее</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <p>© 2025 IMPULSE WELLNESS & SPA</p>
+    </footer>
+
+    <!-- Всплывающее меню -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <button class="menu-close" aria-label="Закрыть меню">✕</button>
+            <div class="menu-logo">
+                <img src="logot.png" alt="IMPULSE Wellness & Spa">
+                <span>IMPULSE<br>WELLNESS & SPA</span>
+            </div>
+            <nav class="menu-nav">
+                <a href="index.html">Главная</a>
+                <a href="#services">Услуги</a>
+                <a href="#contacts">Контакты</a>
+                <a href="auth.html">Личный кабинет</a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const menu = document.getElementById('menuOverlay');
+        const closeBtn = document.querySelector('.menu-close');
+
+        burger.addEventListener('click', () => menu.classList.add('active'));
+        closeBtn.addEventListener('click', () => menu.classList.remove('active'));
+        menu.addEventListener('click', (e) => {
+            if (e.target === menu) menu.classList.remove('active');
+        });
+
+        // Навигация по шагам
+        document.querySelectorAll('.btn-select').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Здесь будет логика перехода к следующему шагу
+                alert('Специалист выбран! Переход к выбору даты и времени');
+            });
+        });
+    </script>
+</body>
+</html>

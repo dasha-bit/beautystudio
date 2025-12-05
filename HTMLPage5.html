@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Административная панель - IMPULSE Wellness & Spa</title>
+    <link rel="stylesheet" href="css/StyleSheet5.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header" 
+        <!-- Верхняя полоса -->
+        <div class="header-top">
+            <button class="burger" aria-label="Открыть меню">
+                <span></span><span></span><span></span>
+            </button>
+
+            <a href="index.html" class="top-logo">
+                <img src="logot.png" alt="IMPULSE Wellness & Spa">
+                <span class="logo-text">IMPULSE<br>WELLNESS & SPA</span>
+            </a>
+
+            <div class="top-divider"></div>
+
+            <div class="top-item">
+                <span class="top-value">г. Иркутск, Красных Мадьяр 32</span>
+            </div>
+
+            <div class="top-divider"></div>
+
+            <div class="top-item">
+                <span class="top-value">Пн–Вс: 9:00–21:00</span>
+            </div>
+
+            <div class="top-divider"></div>
+
+            <a class="top-item top-phone" href="tel:+74951459033">
+                <span class="top-value">8 (495) 145-90-33</span>
+            </a>
+        </div>
+
+        <!-- Герой -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Административная панель</h1>
+            </div>
+        </section>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="admin-main">
+        <div class="admin-container">
+            <!-- Заголовок и кнопка добавления -->
+            <div class="admin-header">
+                <h2>Клиенты</h2>
+                <button class="btn-add-client">+ Добавить клиента</button>
+            </div>
+
+            <!-- Таблица клиентов -->
+            <div class="table-container">
+                <table class="clients-table">
+                    <thead>
+                        <tr>
+                            <th>Клиент</th>
+                            <th>Услуга</th>
+                            <th>Дата</th>
+                            <th>Время</th>
+                            <th>ID Мастера</th>
+                            <th>Стоимость</th>
+                            <th>Номер тел.</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Петрова Ольга</td>
+                            <td>Маникюр</td>
+                            <td>20.05.2025</td>
+                            <td>12:00</td>
+                            <td>001</td>
+                            <td>2500 ₽</td>
+                            <td>+79085643572</td>
+                            <td>
+                                <button class="btn-view">Просмотр</button>
+                                <button class="btn-edit">Редакт.</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Михайлова Елена</td>
+                            <td>Стрижка</td>
+                            <td>18.09.2025</td>
+                            <td>14:30</td>
+                            <td>002</td>
+                            <td>4700 ₽</td>
+                            <td>+79027655432</td>
+                            <td>
+                                <button class="btn-view">Просмотр</button>
+                                <button class="btn-edit">Редакт.</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Иванова Мария</td>
+                            <td>Педикюр</td>
+                            <td>24.07.2025</td>
+                            <td>18:00</td>
+                            <td>003</td>
+                            <td>1800 ₽</td>
+                            <td>+79020759043</td>
+                            <td>
+                                <button class="btn-view">Просмотр</button>
+                                <button class="btn-edit">Редакт.</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Детальная информация о клиенте -->
+            <div class="client-details">
+                <div class="details-header">
+                    <h3>Просмотр пользователя</h3>
+                </div>
+
+                <div class="details-content">
+                    <!-- Основная информация -->
+                    <div class="client-info">
+                        <div class="client-main">
+                            <h4>Петрова Ольга</h4>
+                            <p class="client-phone">+79085643572</p>
+                            <button class="btn-edit-client">Редактировать</button>
+                        </div>
+
+                        <div class="client-contact">
+                            <p class="client-email">
+                                <a href="mailto:petrovadya@mail.ru">petrovadya@mail.ru</a>
+                            </p>
+                            <button class="btn-new-service">Записать на новую услугу</button>
+                        </div>
+                    </div>
+
+                    <!-- Разделитель -->
+                    <div class="divider"></div>
+
+                    <!-- Ближайшие записи -->
+                    <div class="appointments-section">
+                        <h4>Ближайшие записи (2)</h4>
+                        <div class="appointment-card">
+                            <div class="appointment-header">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    26 июня, 12:15 
+                                </label>
+                            </div>
+                            <div class="appointment-details">
+                                <p>Услуга: Маникюр</p>
+                                <p>Мастер: Иванова Ирина</p>
+                                <p>Стоимость: 2500 ₽</p>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-move">Перенести</button>
+                                <button class="btn-cancel">Отменить</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Прошлые записи -->
+                    <div class="appointments-section">
+                        <h4>Прошлые записи (1)</h4>
+                        <div class="appointment-card past">
+                            <div class="appointment-header">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    6 июня, 13:00-16:00
+                                </label>
+                            </div>
+                            <div class="appointment-details">
+                                <p>Услуга: Педикюр</p>
+                                <p>Мастер: Сидорова Анна</p>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-complete">Завершить</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Примечания -->
+                    <div class="notes-section">
+                        <h4>Примечания</h4>
+                        <div class="notes-container">
+                            <textarea class="notes-textarea" placeholder="Добавьте примечания о клиенте..."></textarea>
+                            <button class="btn-save-notes">Сохранить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <p>© 2025 IMPULSE WELLNESS & SPA</p>
+    </footer>
+
+    <!-- Всплывающее меню -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <button class="menu-close" aria-label="Закрыть меню">✕</button>
+            <div class="menu-logo">
+                <img src="logot.png" alt="IMPULSE Wellness & Spa">
+                <span>IMPULSE<br>WELLNESS & SPA</span>
+            </div>
+            <nav class="menu-nav">
+                <a href="index.html">Главная</a>
+                <a href="booking.html">Онлайн запись</a>
+                <a href="#services">Услуги</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const menu = document.getElementById('menuOverlay');
+        const closeBtn = document.querySelector('.menu-close');
+
+        burger.addEventListener('click', () => menu.classList.add('active'));
+        closeBtn.addEventListener('click', () => menu.classList.remove('active'));
+        menu.addEventListener('click', (e) => {
+            if (e.target === menu) menu.classList.remove('active');
+        });
+
+        // Обработчики для кнопок таблицы
+        document.querySelectorAll('.btn-view').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Логика просмотра клиента
+                alert('Просмотр клиента');
+            });
+        });
+
+        document.querySelectorAll('.btn-edit').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Логика редактирования клиента
+                alert('Редактирование клиента');
+            });
+        });
+
+        // Кнопка добавления клиента
+        document.querySelector('.btn-add-client').addEventListener('click', function() {
+            alert('Добавление нового клиента');
+        });
+    </script>
+</body>
+</html>

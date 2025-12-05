@@ -1,4 +1,11 @@
-﻿/* ========== ОБЩИЕ СТИЛИ ========== */
+﻿/* CSS переменные */
+:root {
+    --border: #e0e0e0;
+    --accent: #f0d5da;
+    --accent-dark: #e6c2c8;
+}
+
+/* Общие стили */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,9 +13,18 @@ body {
     color: #333;
 }
 
-/* ===== ШАПКА ===== */
+html {
+    background-color: #fff !important;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* Верхняя полоса шапки */
 .header {
-    background: url('account.jpg') center/cover no-repeat;
+    background: url('hair.jpg') center/cover no-repeat;
     color: #fff;
     position: relative;
     padding: 0;
@@ -22,7 +38,6 @@ body {
         pointer-events: none;
     }
 
-/* ===== ВЕРХНЯЯ ПОЛОСА ===== */
 .header-top {
     position: relative;
     z-index: 2;
@@ -69,7 +84,6 @@ body {
         transform: translateY(-9px) rotate(-45deg);
     }
 
-/* ===== ЛОГОТИП ===== */
 .top-logo {
     display: inline-flex;
     align-items: center;
@@ -89,7 +103,6 @@ body {
     color: #1a1a1a;
 }
 
-/* ===== ДЕКОР И ЭЛЕМЕНТЫ ШАПКИ ===== */
 .top-divider {
     width: 1px;
     height: 28px;
@@ -100,6 +113,11 @@ body {
 .top-item {
     display: flex;
     flex-direction: column;
+}
+
+.top-label {
+    font-size: 11px;
+    color: rgba(0,0,0,0.55);
 }
 
 .top-value {
@@ -120,11 +138,11 @@ body {
         color: #d2748b;
     }
 
-/* ===== ГЕРОЙ ===== */
+/* Герой */
 .hero {
     position: relative;
     z-index: 1;
-    min-height: 65vh;
+    min-height: 72vh;
     display: flex;
     align-items: center;
     padding: 48px 24px 80px;
@@ -137,14 +155,17 @@ body {
 }
 
 .hero h1 {
+    font-family: 'Playfair Display', serif;
     font-size: 56px;
-    font-weight: 300;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 80px 0 24px 0;
     color: #fff;
-    margin: 80px 0 24px;
     text-shadow: 0 2px 16px rgba(0,0,0,0.25);
 }
 
-/* ===== АДАПТИВ ШАПКИ ===== */
+
+/* Адаптив верхней полосы */
 @media (max-width: 1100px) {
     .header-top {
         grid-template-columns: 56px auto 1fr;
@@ -158,93 +179,286 @@ body {
         display: none;
     }
 
+    .top-item {
+        grid-column: 1 / -1;
+    }
+
     .hero h1 {
         font-size: 40px;
         margin-top: 40px;
     }
 }
 
-/* ========== МОИ ЗАПИСИ (services) ========== */
-.services {
-    background-color: #fff;
+/* Секция со скидкой */
+.discount-section {
+    background: #fbeaec;
     padding: 60px 20px;
-    animation: fadeIn 0.8s ease-in;
+    text-align: center;
 }
 
-    .services h2 {
-        font-size: 28px;
-        color: #c96a7b;
-        text-align: left;
-        margin-left: 300px;
-        margin-bottom: 40px;
-        line-height: 1.2;
-    }
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 900px;
+.discount-content {
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.service-card {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background: #fff;
-    transition: transform 0.3s ease;
+.discount-section h2 {
+    font-size: 32px;
+    color: #c96a7b;
+    margin-bottom: 30px;
+    font-weight: 300;
 }
 
-    .service-card:hover {
-        transform: translateY(-5px);
-    }
+.discount-percent {
+    font-size: 48px;
+    font-weight: bold;
+    color: #c96a7b;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
 
-
-    .service-card img {
-        width: 100%;
-        height: 250px; /* можно менять на 220–280px по вкусу */
-        object-fit: cover; /* важно! аккуратно обрезает фото */
-        border-radius: 12px 12px 0 0;
-        display: block;
-    }
-
-
-    .service-card h3 {
-        margin: 15px 0;
-        padding: 0 10px;
-        font-size: 16px;
-        color: #333;
-    }
-
-/* ===== КНОПКИ ===== */
-.btn-wrapper {
+.discount-form {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 0 20px 20px;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
-.btn {
-    padding: 10px 15px;
-    background: #d2748b;
+.discount-input {
+    padding: 12px 20px;
     border: none;
-    border-radius: 8px;
+    border-radius: 25px;
+    font-size: 16px;
+    min-width: 200px;
+    outline: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+    .discount-input::placeholder {
+        color: #999;
+    }
+
+.discount-btn {
+    padding: 12px 30px;
+    background: #d2748b;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(210, 116, 139, 0.3);
+}
+
+    .discount-btn:hover {
+        background: #b95d72;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(210, 116, 139, 0.4);
+    }
+
+/* Sections */
+.section-title {
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    margin: 48px 0 20px;
+    color: #c96a7b;
+    margin-left: 300px;
+    text-align: left;
+    line-height: 1.2;
+}
+
+/* Price */
+.price {
+    background: #fff;
+    padding: 40px 20px;
+}
+
+.price__table {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.price__row {
+    display: grid;
+    grid-template-columns: 1fr 140px 140px;
+    border-top: 1px dashed var(--border);
+}
+
+    .price__row:first-child {
+        border-top: 0;
+    }
+
+.price__row--head {
+    background: #fff5f7;
+    font-weight: 600;
+}
+
+.price__cell {
+    padding: 14px 18px;
+}
+
+.price__cell--time, .price__cell--cost {
+    text-align: right;
+    color: #444;
+}
+
+.price__cta {
+    display: flex;
+    justify-content: center;
+    padding: 18px 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #3b2b2f;
+    text-decoration: none;
+    border: 1px solid var(--accent-dark);
+}
+
+    .button:hover {
+        background: var(--accent-dark);
+    }
+
+/* Works / Carousel */
+.works {
+    background: #fbeaec;
+    padding: 60px 20px;
+}
+
+    .works.section-title {
+        color: #c96b7d;
+        font-size: 28px;
+        margin-left: 300px;
+        text-align: left;
+    }
+
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carousel__track {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+}
+
+.carousel__item {
+    flex-shrink: 0;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Центральное изображение (больше и в фокусе) */
+.carousel__item:nth-child(2) {
+    width: 350px;
+    height: 350px;
+    z-index: 2;
+    position: relative;
+}
+
+/* Боковые изображения (меньше и частично видны) */
+.carousel__item:nth-child(1),
+.carousel__item:nth-child(3) {
+    width: 250px;
+    height: 250px;
+    opacity: 0.7;
+}
+
+.carousel__arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #f0d5da;
     color: #fff;
     cursor: pointer;
-    font-size: 14px;
-    transition: background 0.3s, transform 0.2s;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 3;
+    position: relative;
 }
 
-    .btn:hover {
-        background: #b95d72;
-        transform: scale(1.03);
+    .carousel__arrow:hover {
+        background: #e6c2c8;
+        transform: scale(1.1);
     }
 
-/* ========== КОНТАКТЫ ========== */
+    .carousel__arrow--prev {
+        margin-right: -10px;
+    }
+
+    .carousel__arrow--next {
+        margin-left: -10px;
+    }
+
+
+
+/* Подвал */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f0d5da;
+    color: #333;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #e6c2c8;
+    transform: translateY(-2px);
+}
+
+.footer-logo {
+    font-size: 14px;
+    line-height: 1.1;
+    letter-spacing: .06em;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+/* Контакты */
 .contacts {
     padding: 60px 0;
-    background: #fbeaec;
+    background: #fff;
 }
 
 .contacts-inner h2 {
@@ -273,7 +487,12 @@ body {
 .card-title {
     font-weight: 700;
     color: #1f1f1f;
-    margin-bottom: 8px;
+    margin: 0 0 8px 0;
+}
+
+.card-text {
+    margin: 0;
+    color: #333;
 }
 
 .phone {
@@ -287,7 +506,7 @@ body {
         border-bottom-color: transparent;
     }
 
-/* ===== СОЦСЕТИ ===== */
+/* Соц. иконки */
 .socials {
     display: flex;
     gap: 12px;
@@ -311,7 +530,7 @@ body {
         border-color: #d2748b;
     }
 
-/* ===== КАРТА ===== */
+/* Карта */
 .map-wrapper {
     grid-column: 3;
     grid-row: 1 / span 2;
@@ -328,22 +547,14 @@ body {
         height: 100%;
         border: 0;
     }
-
-/* ===== ФУТЕР ===== */
-.footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-/* ===== АДАПТИВ ===== */
+/* Адаптив */
 @media (max-width: 960px) {
-    .contacts-inner h2,
-    .services h2 {
+    .section-title {
         margin-left: 20px;
-        text-align: center;
+    }
+
+    .contacts-inner h2 {
+        margin-left: 20px;
     }
 
     .contacts-grid {
@@ -357,15 +568,27 @@ body {
     }
 }
 
-/* ===== АНИМАЦИЯ ===== */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.98);
+@media (max-width: 640px) {
+    .carousel {
+        flex-direction: column;
+        gap: 15px;
     }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
+    
+    .carousel__track {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .carousel__item {
+        width: 280px !important;
+        height: 280px !important;
+        opacity: 1 !important;
+    }
+    
+    .carousel__arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        margin: 0 !important;
     }
 }

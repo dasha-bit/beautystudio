@@ -1,0 +1,663 @@
+﻿/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #fbeaec;
+    color: #333;
+}
+
+/* Верхняя полоса шапки */
+.header {
+    background: url('facemirror2.jpg') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    padding: 0;
+}
+
+    .header::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.25) 100%);
+        pointer-events: none;
+    }
+
+.header-top {
+    position: relative;
+    z-index: 2;
+    height: 72px;
+    display: grid;
+    grid-template-columns: 56px auto 1px auto 1px auto 1px auto;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px;
+    background: rgba(255, 240, 243, 0.9);
+    backdrop-filter: blur(6px);
+}
+
+/* Бургер-кнопка */
+.burger {
+    position: relative;
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+    .burger span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: #333;
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+
+    .burger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+.top-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 50px;
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+    .top-logo img {
+        height: 28px;
+    }
+
+.logo-text {
+    font-size: 12px;
+    line-height: 1.1;
+    letter-spacing: .06em;
+    color: #1a1a1a;
+}
+
+.top-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(0,0,0,0.25);
+    justify-self: center;
+}
+
+.top-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-label {
+    font-size: 11px;
+    color: rgba(0,0,0,0.55);
+}
+
+.top-value {
+    font-size: 14px;
+    color: #1f1f1f;
+    white-space: nowrap;
+}
+
+.top-phone {
+    text-decoration: none;
+}
+
+    .top-phone .top-value {
+        color: #000;
+    }
+
+    .top-phone:hover .top-value {
+        color: #d2748b;
+    }
+
+/* Герой */
+.hero {
+    position: relative;
+    z-index: 1;
+    min-height: 25vh;
+    display: flex;
+    align-items: center;
+    padding: 40px 24px 30px;
+}
+
+.hero-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.1;
+    margin: 30px 0 20px 0;
+    color: #fff;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.25);
+}
+
+/* Основной контент */
+.admin-main {
+    background-color: #fbeaec;
+    padding: 30px 20px;
+    min-height: 70vh;
+}
+
+.admin-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+    .breadcrumbs a {
+        color: #d2748b;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .breadcrumbs a:hover {
+            color: #b95d72;
+            text-decoration: underline;
+        }
+
+.breadcrumb-divider {
+    color: #999;
+}
+
+/* Форма добавления пользователя */
+.add-user-form {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(210, 116, 139, 0.15);
+    overflow: hidden;
+    animation: slideIn 0.5s ease-out;
+}
+
+.form-header {
+    padding: 40px 40px 30px;
+    border-bottom: 1px solid #f0f0f0;
+    background: linear-gradient(135deg, #fdf2f4 0%, #fbeaec 100%);
+}
+
+    .form-header h2 {
+        color: #c96a7b;
+        margin: 0 0 12px 0;
+        font-size: 28px;
+        font-weight: 300;
+    }
+
+    .form-header p {
+        color: #666;
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+.user-form {
+    padding: 0;
+}
+
+/* Секции формы */
+.form-section {
+    padding: 35px 40px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+    .form-section:last-of-type {
+        border-bottom: none;
+    }
+
+.section-title {
+    color: #333;
+    margin: 0 0 25px 0;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .section-title::before {
+        content: "";
+        width: 4px;
+        height: 20px;
+        background: #d2748b;
+        border-radius: 2px;
+    }
+
+/* Группы формы */
+.form-group {
+    margin-bottom: 28px;
+    position: relative;
+}
+
+    .form-group:last-child {
+        margin-bottom: 0;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 10px;
+        color: #333;
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+.required {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background: #fafafa;
+    font-family: Arial, sans-serif;
+}
+
+    .form-group input:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: #d2748b;
+        background: white;
+        box-shadow: 0 0 0 4px rgba(210, 116, 139, 0.1);
+    }
+
+    .form-group input.error,
+    .form-group select.error {
+        border-color: #dc3545;
+        background: #fdf2f2;
+    }
+
+/* Поле телефона */
+.phone-input {
+    display: flex;
+    align-items: center;
+    background: #fafafa;
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+    .phone-input:focus-within {
+        border-color: #d2748b;
+        background: white;
+        box-shadow: 0 0 0 4px rgba(210, 116, 139, 0.1);
+    }
+
+.phone-prefix {
+    padding: 14px 16px;
+    background: #f0f0f0;
+    color: #666;
+    font-weight: 500;
+    border-right: 1px solid #e0e0e0;
+    min-width: 60px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.phone-input input {
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    padding-left: 16px;
+    flex: 1;
+}
+
+    .phone-input input:focus {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+/* Поле пароля */
+.password-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+    .password-input input {
+        padding-right: 55px;
+    }
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .toggle-password:hover {
+        color: #d2748b;
+        background: #f0f0f0;
+    }
+
+.password-hint {
+    font-size: 13px;
+    color: #666;
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+/* Чекбокс большой */
+.checkbox-group {
+    margin-top: 30px;
+}
+
+.checkbox-large {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    cursor: pointer;
+    padding: 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+    .checkbox-large:hover {
+        border-color: #d2748b;
+        background: #fdf2f4;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(210, 116, 139, 0.1);
+    }
+
+    .checkbox-large input {
+        display: none;
+    }
+
+.checkmark-large {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #d2748b;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.checkbox-large input:checked + .checkmark-large {
+    background: #d2748b;
+    border-color: #d2748b;
+}
+
+    .checkbox-large input:checked + .checkmark-large::after {
+        content: "✓";
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+.checkbox-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.checkbox-title {
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+.checkbox-description {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Сообщения об ошибках */
+.error-message {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 8px;
+    display: none;
+    font-weight: 500;
+}
+
+.form-group input:invalid:not(:focus):not(:placeholder-shown) + .error-message,
+.form-group select:invalid:not(:focus) + .error-message {
+    display: block;
+}
+
+/* Кнопки формы */
+.form-actions {
+    padding: 35px 40px;
+    background: #f8f9fa;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    border-top: 1px solid #e9ecef;
+}
+
+.btn-cancel, .btn-save {
+    padding: 14px 35px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+    font-family: Arial, sans-serif;
+}
+
+.btn-cancel {
+    background: #6c757d;
+    color: white;
+    box-shadow: 0 2px 8px rgba(108, 117, 125, 0.2);
+}
+
+    .btn-cancel:hover {
+        background: #545b62;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+    }
+
+.btn-save {
+    background: linear-gradient(135deg, #d2748b, #c96a7b);
+    color: white;
+    box-shadow: 0 4px 15px rgba(210, 116, 139, 0.3);
+}
+
+    .btn-save:hover {
+        background: linear-gradient(135deg, #b95d72, #b55868);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(210, 116, 139, 0.4);
+    }
+
+    .btn-save:active {
+        transform: translateY(0);
+    }
+
+/* Подвал */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 0;
+}
+
+    .footer p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+/* Всплывающее меню */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 240, 243, 0.97);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+    .menu-overlay.active {
+        display: flex;
+        animation: fadeIn 0.3s ease;
+    }
+
+.menu-content {
+    text-align: center;
+    position: relative;
+    padding: 60px 40px 40px;
+}
+
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    border: none;
+    background: transparent;
+    font-size: 26px;
+    color: #c96a7b;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+    .menu-close:hover {
+        color: #a75263;
+    }
+
+.menu-logo {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.3;
+    letter-spacing: 0.08em;
+    color: #c96a7b;
+    margin-bottom: 40px;
+}
+
+    .menu-logo img {
+        display: block;
+        margin: 0 auto 8px;
+        height: 30px;
+    }
+
+.menu-nav a {
+    display: block;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    margin: 20px 0;
+    transition: color 0.3s;
+}
+
+    .menu-nav a:hover {
+        color: #c96a7b;
+    }
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-top {
+        grid-template-columns: 56px auto 1fr;
+        grid-auto-rows: auto;
+        grid-row-gap: 10px;
+        height: auto;
+        padding: 10px 16px;
+    }
+
+    .top-divider {
+        display: none;
+    }
+
+    .top-item {
+        grid-column: 1 / -1;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        margin-top: 15px;
+    }
+
+    .admin-main {
+        padding: 20px 15px;
+    }
+
+    .admin-container {
+        max-width: 100%;
+    }
+
+    .form-header {
+        padding: 30px 25px 20px;
+    }
+
+        .form-header h2 {
+            font-size: 24px;
+        }
+
+    .form-section {
+        padding: 25px;

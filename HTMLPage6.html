@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление пользователя - IMPULSE Wellness & Spa</title>
+    <link rel="stylesheet" href="css/StyleSheet6.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header" style="background: url('facemirror2.jpg') center/cover no-repeat">
+        <!-- Верхняя полоса -->
+        <div class="header-top">
+            <button class="burger" aria-label="Открыть меню">
+                <span></span><span></span><span></span>
+            </button>
+
+            <a href="index.html" class="top-logo">
+                <img src="logot.png" alt="IMPULSE Wellness & Spa">
+                <span class="logo-text">IMPULSE<br>WELLNESS & SPA</span>
+            </a>
+
+            <div class="top-divider"></div>
+
+            <div class="top-item">
+                <span class="top-value">г. Иркутск, Красных Мадьяр 32</span>
+            </div>
+
+            <div class="top-divider"></div>
+
+            <div class="top-item">
+                <span class="top-value">Пн–Вс: 9:00–21:00</span>
+            </div>
+
+            <div class="top-divider"></div>
+
+            <a class="top-item top-phone" href="tel:+74951459033">
+                <span class="top-value">8 (495) 145-90-33</span>
+            </a>
+        </div>
+
+        <!-- Герой -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Добавление пользователя</h1>
+            </div>
+        </section>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="admin-main">
+        <div class="admin-container">
+            <!-- Хлебные крошки -->
+            <div class="breadcrumbs">
+                <a href="admin.html">Административная панель</a>
+                <span class="breadcrumb-divider">/</span>
+                <span>Добавление пользователя</span>
+            </div>
+
+            <!-- Форма добавления пользователя -->
+            <div class="add-user-form">
+                <div class="form-header">
+                    <h2>Добавление пользователя</h2>
+                    <p>Заполните информацию о новом пользователе системы</p>
+                </div>
+
+                <form class="user-form">
+                    <!-- Секция личных данных -->
+                    <div class="form-section">
+                        <h3 class="section-title">Личные данные</h3>
+
+                        <!-- Имя и Фамилия -->
+                        <div class="form-group">
+                            <label for="fullName">Имя, Фамилия <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Введите имя и фамилию" required>
+                            <div class="error-message">Это обязательное поле</div>
+                        </div>
+
+                        <!-- Номер телефона -->
+                        <div class="form-group">
+                            <label for="phone">Номер телефона <span class="required">*</span></label>
+                            <div class="phone-input">
+                                <span class="phone-prefix">+7</span>
+                                <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required>
+                            </div>
+                            <div class="error-message">Это обязательное поле</div>
+                        </div>
+
+                        <!-- Роль пользователя -->
+                        <div class="form-group">
+                            <label for="role">Роль пользователя <span class="required">*</span></label>
+                            <select id="role" name="role" required>
+                                <option value="">Выберите роль</option>
+                                <option value="admin">Администратор</option>
+                                <option value="master">Мастер</option>
+                                <option value="manager">Менеджер</option>
+                                <option value="client">Клиент</option>
+                            </select>
+                            <div class="error-message">Это обязательное поле</div>
+                        </div>
+                    </div>
+
+                    <!-- Секция безопасности -->
+                    <div class="form-section">
+                        <h3 class="section-title">Безопасность</h3>
+
+                        <!-- Пароль -->
+                        <div class="form-group">
+                            <label for="password">Пароль <span class="required">*</span></label>
+                            <div class="password-input">
+                                <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+                                <button type="button" class="toggle-password" aria-label="Показать пароль">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="password-hint">Пароль должен содержать не менее 8 символов</div>
+                        </div>
+
+                        <!-- Подтверждение пароля -->
+                        <div class="form-group">
+                            <label for="confirmPassword">Подтверждение пароля <span class="required">*</span></label>
+                            <div class="password-input">
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль" required>
+                                <button type="button" class="toggle-password" aria-label="Показать пароль">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="error-message">Пароли не совпадают</div>
+                        </div>
+
+                        <!-- Двухфакторная аутентификация -->
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-large">
+                                <input type="checkbox" id="twoFactor" name="twoFactor">
+                                <span class="checkmark-large"></span>
+                                <div class="checkbox-content">
+                                    <span class="checkbox-title">Двухфакторная аутентификация</span>
+                                    <span class="checkbox-description">Рекомендуется для администраторов и менеджеров</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Кнопки формы -->
+                    <div class="form-actions">
+                        <button type="button" class="btn-cancel">Отмена</button>
+                        <button type="submit" class="btn-save">Сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <p>© 2025 IMPULSE WELLNESS & SPA</p>
+    </footer>
+
+    <!-- Всплывающее меню -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <button class="menu-close" aria-label="Закрыть меню">✕</button>
+            <div class="menu-logo">
+                <img src="logot.png" alt="IMPULSE Wellness & Spa">
+                <span>IMPULSE<br>WELLNESS & SPA</span>
+            </div>
+            <nav class="menu-nav">
+                <a href="index.html">Главная</a>
+                <a href="booking.html">Онлайн запись</a>
+                <a href="admin.html">Админ-панель</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const menu = document.getElementById('menuOverlay');
+        const closeBtn = document.querySelector('.menu-close');
+
+        burger.addEventListener('click', () => menu.classList.add('active'));
+        closeBtn.addEventListener('click', () => menu.classList.remove('active'));
+        menu.addEventListener('click', (e) => {
+            if (e.target === menu) menu.classList.remove('active');
+        });
+
+        // Переключение видимости пароля
+        document.querySelectorAll('.toggle-password').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.parentElement.querySelector('input');
+                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                input.setAttribute('type', type);
+
+                // Изменение иконки
+                const icon = this.querySelector('svg');
+                if (type === 'text') {
+                    icon.innerHTML = `
+                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                    `;
+                } else {
+                    icon.innerHTML = `
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    `;
+                }
+            });
+        });
+
+        // Валидация формы
+        document.querySelector('.user-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert('Пароли не совпадают!');
+                return;
+            }
+
+            if (password.length < 8) {
+                alert('Пароль должен содержать не менее 8 символов!');
+                return;
+            }
+
+            // Если все проверки пройдены
+            alert('Пользователь успешно добавлен!');
+            // Здесь можно добавить отправку формы на сервер
+        });
+
+        // Кнопка отмены
+        document.querySelector('.btn-cancel').addEventListener('click', function() {
+            if (confirm('Вы уверены, что хотите отменить создание пользователя? Все данные будут потеряны.')) {
+                window.location.href = 'admin.html';
+            }
+        });
+    </script>
+</body>
+</html>
