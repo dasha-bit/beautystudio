@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация - IMPULSE Wellness & Spa</title>
+    <link rel="stylesheet" href="auth/css/StyleSheet4.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header" style="background: url('auth/fon.jpg') center/cover no-repeat">
+        <!-- Верхняя полоса -->
+        <div class="header-top">
+            <button class="burger" aria-label="Открыть меню">
+                <span></span><span></span><span></span>
+            </button>
+
+            <a href="index.html" class="top-logo">
+                <img src="auth/logot.png" alt="IMPULSE Wellness & Spa">
+                <span class="logo-text">IMPULSE<br>WELLNESS & SPA</span>
+            </a>
+
+            <div class="top-divider"></div>
+
+            <div class="top-item">
+                <span class="top-value">г. Иркутск, Красных Мадьяр 32</span>
+            </div>
+
+            <div class="top-divider"></div>
+
+            <div class="top-item">
+                <span class="top-value">Пн–Вс: 9:00–21:00</span>
+            </div>
+
+            <div class="top-divider"></div>
+
+            <a class="top-item top-phone" href="tel:+74951459033">
+                <span class="top-value">8 (495) 145-90-33</span>
+            </a>
+        </div>
+
+        <!-- Герой -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Личный кабинет</h1>
+            </div>
+        </section>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2>Авторизация</h2>
+
+                <form class="auth-form">
+                    <div class="form-group">
+                        <label for="phone">Номер телефона</label>
+                        <div class="phone-input">
+                            <span class="phone-prefix">+7</span>
+                            <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+                    </div>
+
+                    <button type="submit" class="btn-auth">Войти</button>
+
+                    <div class="auth-links">
+                        <a href="#" class="forgot-password">Забыли пароль?</a>
+                    </div>
+                </form>
+
+                <div class="auth-divider">
+                    <span> или </span>
+                </div>
+
+                <button class="btn-booking">Записаться без регистрации</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <p>© 2025 IMPULSE WELLNESS & SPA</p>
+    </footer>
+
+    <!-- Всплывающее меню -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <button class="menu-close" aria-label="Закрыть меню">✕</button>
+            <div class="menu-logo">
+                <img src="auth/logot.png" alt="IMPULSE Wellness & Spa">
+                <span>IMPULSE<br>WELLNESS & SPA</span>
+            </div>
+            <nav class="menu-nav">
+                <a href="index.html">Главная</a>
+                <a href="#services">Услуги</a>
+                <a href="#contacts">Контакты</a>
+                <a href="booking.html">Онлайн запись</a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const menu = document.getElementById('menuOverlay');
+        const closeBtn = document.querySelector('.menu-close');
+
+        burger.addEventListener('click', () => menu.classList.add('active'));
+        closeBtn.addEventListener('click', () => menu.classList.remove('active'));
+        menu.addEventListener('click', (e) => {
+            if (e.target === menu) menu.classList.remove('active');
+        });
+
+        // Переход к записи без регистрации
+        document.querySelector('.btn-booking').addEventListener('click', function() {
+            window.location.href = 'booking.html';
+        });
+    </script>
+</body>
+</html>
+
+
